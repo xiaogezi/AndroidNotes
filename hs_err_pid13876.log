@@ -1,0 +1,670 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (0xc0000002), pid=13876, tid=11244
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_66-b17) (build 1.8.0_66-b17)
+# Java VM: Java HotSpot(TM) Client VM (25.66-b17 mixed mode windows-x86 )
+# Problematic frame:
+# C  [KERNELBASE.dll+0xbdae8]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0656b800):  JavaThread "main" [_thread_in_native, id=11244, stack(0x000a0000,0x001a0000)]
+
+siginfo: ExceptionCode=0xc0000002
+
+Registers:
+EAX=0x0019c288, EBX=0x0e2a1f08, ECX=0x00000000, EDX=0x0038a000
+ESP=0x0019c288, EBP=0x0019c2e4, ESI=0x735fe6b0, EDI=0x0019c388
+EIP=0x76f5dae8, EFLAGS=0x00200246
+
+Top of Stack: (sp=0x0019c288)
+0x0019c288:   c0000002 00000001 00000000 76f5dae8
+0x0019c298:   00000000 00000001 06521ee8 0000000a
+0x0019c2a8:   0019c2e8 7736dd20 00000016 00000000
+0x0019c2b8:   00000016 00000016 00000016 00000020
+0x0019c2c8:   519a2638 7736dd20 00000000 00000004
+0x0019c2d8:   00000002 8a994413 00000000 0019c31c
+0x0019c2e8:   75c09081 c0000002 00000001 00000000
+0x0019c2f8:   00000000 735e5040 0019c388 0e2aee58 
+
+Instructions: (pc=0x76f5dae8)
+0x76f5dac8:   e0 01 c7 44 24 0c a0 da f5 76 89 44 24 04 85 c9
+0x76f5dad8:   75 1f 21 4c 24 10 8d 04 24 50 ff 15 78 a3 ff 76
+0x76f5dae8:   8b 4c 24 54 33 cc e8 11 12 02 00 8b e5 5d c2 10
+0x76f5daf8:   00 8b 45 10 83 f8 0f 77 18 89 44 24 10 c1 e0 02 
+
+
+Register to memory mapping:
+
+EAX=0x0019c288 is pointing into the stack for thread: 0x0656b800
+EBX=0x0e2a1f08 is an unknown value
+ECX=0x00000000 is an unknown value
+EDX=0x0038a000 is an unknown value
+ESP=0x0019c288 is pointing into the stack for thread: 0x0656b800
+EBP=0x0019c2e4 is pointing into the stack for thread: 0x0656b800
+ESI=0x735fe6b0 is an unknown value
+EDI=0x0019c388 is pointing into the stack for thread: 0x0656b800
+
+
+Stack: [0x000a0000,0x001a0000],  sp=0x0019c288,  free space=1008k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [KERNELBASE.dll+0xbdae8]
+C  [MSVCRT.dll+0x59081]
+C  [swt-gdip-win32-4528.dll+0x2bff]
+C  [swt-gdip-win32-4528.dll+0x3a1b]
+J 3628  org.eclipse.swt.internal.gdip.Gdip.Graphics_MeasureString(I[CIILorg/eclipse/swt/internal/gdip/PointF;ILorg/eclipse/swt/internal/gdip/RectF;)I (0 bytes) @ 0x0789a2b9 [0x0789a1e0+0xd9]
+J 3659 C1 org.eclipse.swt.graphics.GC.drawTextGDIP(ILjava/lang/String;IIIZLorg/eclipse/swt/graphics/Point;)V (590 bytes) @ 0x078aa2dc [0x078a9e70+0x46c]
+J 3601 C1 org.eclipse.swt.graphics.GC.drawText(ILjava/lang/String;IIILorg/eclipse/swt/graphics/Point;)V (649 bytes) @ 0x07890568 [0x0788fb50+0xa18]
+J 3643 C1 org.eclipse.swt.graphics.GC.textExtent(Ljava/lang/String;I)Lorg/eclipse/swt/graphics/Point; (218 bytes) @ 0x078a5908 [0x078a54e0+0x428]
+J 3646 C1 org.xmind.gef.draw2d.RotatableWrapLabel.getLooseTextSize(Ljava/lang/String;Lorg/eclipse/swt/graphics/Font;)Lorg/eclipse/draw2d/geometry/Dimension; (122 bytes) @ 0x078a6824 [0x078a6650+0x1d4]
+J 4892 C1 org.xmind.gef.draw2d.RotatableWrapLabel.paintText(Lorg/eclipse/draw2d/Graphics;Ljava/lang/String;Lorg/xmind/gef/draw2d/geometry/PrecisionRectangle;Lorg/eclipse/swt/graphics/Font;)V (341 bytes) @ 0x07ace57c [0x07ace3f0+0x18c]
+J 5036 C1 org.xmind.gef.draw2d.RotatableWrapLabel.paintTextArea(Lorg/eclipse/draw2d/Graphics;Lorg/xmind/gef/draw2d/geometry/PrecisionRectangle;)V (102 bytes) @ 0x07b04b88 [0x07b048e0+0x2a8]
+J 5033 C1 org.xmind.gef.draw2d.RotatableWrapLabel.paintFigure(Lorg/eclipse/draw2d/Graphics;)V (362 bytes) @ 0x07b02ad8 [0x07b022a0+0x838]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf2c [0x07acae80+0xac]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+j  org.xmind.gef.draw2d.DecoratedShapeFigure.paint(Lorg/eclipse/draw2d/Graphics;)V+7
+j  org.xmind.ui.internal.figures.InformationFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V+2
+j  org.xmind.ui.internal.figures.InformationFigure.paint(Lorg/eclipse/draw2d/Graphics;)V+59
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+j  org.xmind.ui.internal.layers.BaseLayer.simplePaintClientArea(Lorg/eclipse/draw2d/Graphics;)V+2
+j  org.xmind.ui.internal.layers.BaseLayer.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V+39
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+j  org.xmind.ui.internal.layers.BaseLayer.simplePaint(Lorg/eclipse/draw2d/Graphics;)V+2
+j  org.xmind.ui.internal.layers.BaseLayer.paint(Lorg/eclipse/draw2d/Graphics;)V+44
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+j  org.eclipse.draw2d.ScalableFreeformLayeredPane.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V+24
+j  org.xmind.gef.draw2d.ScalableFreeformLayeredPane.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V+24
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+j  org.xmind.ui.internal.layers.MindMapLayeredPane.paintChildren(Lorg/eclipse/draw2d/Graphics;)V+20
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+j  org.xmind.ui.internal.layers.MindMapLayeredPane.paint(Lorg/eclipse/draw2d/Graphics;)V+2
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb6c8 [0x07acb4d0+0x1f8]
+j  org.eclipse.draw2d.Viewport.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V+32
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+j  org.eclipse.draw2d.DeferredUpdateManager.paint(Lorg/eclipse/swt/graphics/GC;)V+71
+j  org.eclipse.draw2d.LightweightSystem.paint(Lorg/eclipse/swt/graphics/GC;)V+5
+j  org.eclipse.draw2d.LightweightSystem$2.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+8
+J 2014 C1 org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V (532 bytes) @ 0x07672928 [0x07672870+0xb8]
+j  org.eclipse.swt.widgets.Display.sendEvent(Lorg/eclipse/swt/widgets/EventTable;Lorg/eclipse/swt/widgets/Event;)V+12
+j  org.eclipse.swt.widgets.Widget.sendEvent(Lorg/eclipse/swt/widgets/Event;)V+26
+j  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;Z)V+73
+j  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;)V+4
+j  org.eclipse.swt.widgets.Composite.WM_PAINT(II)Lorg/eclipse/swt/internal/win32/LRESULT;+496
+J 2233 C1 org.eclipse.swt.widgets.Control.windowProc(IIII)I (1910 bytes) @ 0x076ed2f8 [0x076ec330+0xfc8]
+J 4423 C1 org.eclipse.swt.widgets.Canvas.windowProc(IIII)I (49 bytes) @ 0x07a291d8 [0x07a29170+0x68]
+J 1825 C1 org.eclipse.swt.widgets.Display.windowProc(IIII)I (359 bytes) @ 0x07627f24 [0x07627c50+0x2d4]
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158ba5]
+V  [jvm.dll+0x21e12e]
+V  [jvm.dll+0x158c3e]
+V  [jvm.dll+0xdb08b]
+V  [jvm.dll+0xdcecc]
+C  [swt-win32-4528.dll+0x122f]
+...<more frames>...
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 3628  org.eclipse.swt.internal.gdip.Gdip.Graphics_MeasureString(I[CIILorg/eclipse/swt/internal/gdip/PointF;ILorg/eclipse/swt/internal/gdip/RectF;)I (0 bytes) @ 0x0789a275 [0x0789a1e0+0x95]
+J 3659 C1 org.eclipse.swt.graphics.GC.drawTextGDIP(ILjava/lang/String;IIIZLorg/eclipse/swt/graphics/Point;)V (590 bytes) @ 0x078aa2dc [0x078a9e70+0x46c]
+J 3601 C1 org.eclipse.swt.graphics.GC.drawText(ILjava/lang/String;IIILorg/eclipse/swt/graphics/Point;)V (649 bytes) @ 0x07890568 [0x0788fb50+0xa18]
+J 3643 C1 org.eclipse.swt.graphics.GC.textExtent(Ljava/lang/String;I)Lorg/eclipse/swt/graphics/Point; (218 bytes) @ 0x078a5908 [0x078a54e0+0x428]
+J 3646 C1 org.xmind.gef.draw2d.RotatableWrapLabel.getLooseTextSize(Ljava/lang/String;Lorg/eclipse/swt/graphics/Font;)Lorg/eclipse/draw2d/geometry/Dimension; (122 bytes) @ 0x078a6824 [0x078a6650+0x1d4]
+J 4892 C1 org.xmind.gef.draw2d.RotatableWrapLabel.paintText(Lorg/eclipse/draw2d/Graphics;Ljava/lang/String;Lorg/xmind/gef/draw2d/geometry/PrecisionRectangle;Lorg/eclipse/swt/graphics/Font;)V (341 bytes) @ 0x07ace57c [0x07ace3f0+0x18c]
+J 5036 C1 org.xmind.gef.draw2d.RotatableWrapLabel.paintTextArea(Lorg/eclipse/draw2d/Graphics;Lorg/xmind/gef/draw2d/geometry/PrecisionRectangle;)V (102 bytes) @ 0x07b04b88 [0x07b048e0+0x2a8]
+J 5033 C1 org.xmind.gef.draw2d.RotatableWrapLabel.paintFigure(Lorg/eclipse/draw2d/Graphics;)V (362 bytes) @ 0x07b02ad8 [0x07b022a0+0x838]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf2c [0x07acae80+0xac]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+j  org.xmind.gef.draw2d.DecoratedShapeFigure.paint(Lorg/eclipse/draw2d/Graphics;)V+7
+j  org.xmind.ui.internal.figures.InformationFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V+2
+j  org.xmind.ui.internal.figures.InformationFigure.paint(Lorg/eclipse/draw2d/Graphics;)V+59
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4838 C1 org.xmind.ui.internal.figures.BranchFigure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (256 bytes) @ 0x07ac0c7c [0x07ac07b0+0x4cc]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 5020 C1 org.xmind.ui.internal.figures.BranchFigure.doPaint(Lorg/eclipse/draw2d/Graphics;)V (44 bytes) @ 0x07afc7b4 [0x07afc780+0x34]
+J 5019 C1 org.xmind.ui.internal.figures.BranchFigure.paint(Lorg/eclipse/draw2d/Graphics;)V (68 bytes) @ 0x07afc2c8 [0x07afc170+0x158]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+j  org.xmind.ui.internal.layers.BaseLayer.simplePaintClientArea(Lorg/eclipse/draw2d/Graphics;)V+2
+j  org.xmind.ui.internal.layers.BaseLayer.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V+39
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+j  org.xmind.ui.internal.layers.BaseLayer.simplePaint(Lorg/eclipse/draw2d/Graphics;)V+2
+j  org.xmind.ui.internal.layers.BaseLayer.paint(Lorg/eclipse/draw2d/Graphics;)V+44
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+j  org.eclipse.draw2d.ScalableFreeformLayeredPane.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V+24
+j  org.xmind.gef.draw2d.ScalableFreeformLayeredPane.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V+24
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+j  org.xmind.ui.internal.layers.MindMapLayeredPane.paintChildren(Lorg/eclipse/draw2d/Graphics;)V+20
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+j  org.xmind.ui.internal.layers.MindMapLayeredPane.paint(Lorg/eclipse/draw2d/Graphics;)V+2
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb6c8 [0x07acb4d0+0x1f8]
+j  org.eclipse.draw2d.Viewport.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V+32
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+J 4855 C1 org.eclipse.draw2d.Figure.paintChildren(Lorg/eclipse/draw2d/Graphics;)V (140 bytes) @ 0x07ac5618 [0x07ac5370+0x2a8]
+J 4879 C1 org.eclipse.draw2d.Figure.paintClientArea(Lorg/eclipse/draw2d/Graphics;)V (155 bytes) @ 0x07acb624 [0x07acb4d0+0x154]
+J 4878 C1 org.eclipse.draw2d.Figure.paint(Lorg/eclipse/draw2d/Graphics;)V (88 bytes) @ 0x07acaf50 [0x07acae80+0xd0]
+j  org.eclipse.draw2d.DeferredUpdateManager.paint(Lorg/eclipse/swt/graphics/GC;)V+71
+j  org.eclipse.draw2d.LightweightSystem.paint(Lorg/eclipse/swt/graphics/GC;)V+5
+j  org.eclipse.draw2d.LightweightSystem$2.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+8
+J 2014 C1 org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V (532 bytes) @ 0x07672928 [0x07672870+0xb8]
+j  org.eclipse.swt.widgets.Display.sendEvent(Lorg/eclipse/swt/widgets/EventTable;Lorg/eclipse/swt/widgets/Event;)V+12
+j  org.eclipse.swt.widgets.Widget.sendEvent(Lorg/eclipse/swt/widgets/Event;)V+26
+j  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;Z)V+73
+j  org.eclipse.swt.widgets.Widget.sendEvent(ILorg/eclipse/swt/widgets/Event;)V+4
+j  org.eclipse.swt.widgets.Composite.WM_PAINT(II)Lorg/eclipse/swt/internal/win32/LRESULT;+496
+J 2233 C1 org.eclipse.swt.widgets.Control.windowProc(IIII)I (1910 bytes) @ 0x076ed2f8 [0x076ec330+0xfc8]
+J 4423 C1 org.eclipse.swt.widgets.Canvas.windowProc(IIII)I (49 bytes) @ 0x07a291d8 [0x07a29170+0x68]
+J 1825 C1 org.eclipse.swt.widgets.Display.windowProc(IIII)I (359 bytes) @ 0x07627f24 [0x07627c50+0x2d4]
+v  ~StubRoutines::call_stub
+J 4768  org.eclipse.swt.internal.win32.OS.DispatchMessageW(Lorg/eclipse/swt/internal/win32/MSG;)I (0 bytes) @ 0x07aa7930 [0x07aa78e0+0x50]
+J 4046 C1 org.eclipse.swt.widgets.Display.readAndDispatch()Z (101 bytes) @ 0x0794f480 [0x0794f250+0x230]
+j  org.eclipse.jface.operation.ModalContext$ModalContextThread.block()V+19
+j  org.eclipse.jface.operation.ModalContext.run(Lorg/eclipse/jface/operation/IRunnableWithProgress;ZLorg/eclipse/core/runtime/IProgressMonitor;Lorg/eclipse/swt/widgets/Display;)V+131
+j  org.eclipse.jface.wizard.WizardDialog.run(ZZLorg/eclipse/jface/operation/IRunnableWithProgress;)V+78
+j  org.xmind.ui.wizards.AbstractMindMapExportWizard.doExport()Z+26
+j  org.xmind.ui.wizards.AbstractMindMapExportWizard.performFinish()Z+146
+j  org.xmind.ui.internal.wizards.ImageExportWizard.performFinish()Z+46
+j  org.eclipse.jface.wizard.WizardDialog.finishPressed()V+4
+j  org.eclipse.jface.wizard.WizardDialog.buttonPressed(I)V+54
+j  org.eclipse.jface.dialogs.Dialog$2.widgetSelected(Lorg/eclipse/swt/events/SelectionEvent;)V+17
+j  org.eclipse.swt.widgets.TypedListener.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+1133
+J 2014 C1 org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V (532 bytes) @ 0x07672928 [0x07672870+0xb8]
+j  org.eclipse.swt.widgets.Display.sendEvent(Lorg/eclipse/swt/widgets/EventTable;Lorg/eclipse/swt/widgets/Event;)V+12
+J 4753 C1 org.eclipse.swt.widgets.Display.runDeferredEvents()Z (109 bytes) @ 0x07aa2798 [0x07aa2640+0x158]
+J 4046 C1 org.eclipse.swt.widgets.Display.readAndDispatch()Z (101 bytes) @ 0x0794f48c [0x0794f250+0x23c]
+j  org.eclipse.jface.window.Window.runEventLoop(Lorg/eclipse/swt/widgets/Shell;)V+23
+j  org.eclipse.jface.window.Window.open()I+49
+j  org.eclipse.ui.internal.handlers.WizardHandler$Export.executeHandler(Lorg/eclipse/core/commands/ExecutionEvent;)V+163
+j  org.eclipse.ui.internal.handlers.WizardHandler.execute(Lorg/eclipse/core/commands/ExecutionEvent;)Ljava/lang/Object;+20
+j  org.eclipse.ui.internal.handlers.HandlerProxy.execute(Lorg/eclipse/core/commands/ExecutionEvent;)Ljava/lang/Object;+33
+j  org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(Lorg/eclipse/e4/core/contexts/IEclipseContext;Ljava/util/Map;Lorg/eclipse/swt/widgets/Event;Lorg/eclipse/core/expressions/IEvaluationContext;)Ljava/lang/Object;+117
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+J 629 C1 sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (10 bytes) @ 0x0743ce00 [0x0743cdd0+0x30]
+J 628 C1 java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (62 bytes) @ 0x0743cb3c [0x0743ca80+0xbc]
+J 1936 C1 org.eclipse.e4.core.internal.di.MethodRequestor.execute()Ljava/lang/Object; (239 bytes) @ 0x07658f8c [0x07658dc0+0x1cc]
+J 2074 C1 org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;Lorg/eclipse/e4/core/di/suppliers/PrimaryObjectSupplier;Lorg/eclipse/e4/core/di/suppliers/PrimaryObjectSupplier;Z)Ljava/lang/Object; (157 bytes) @ 0x0768ed24 [0x0768ea50+0x2d4]
+J 3940 C1 org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(Ljava/lang/Object;Ljava/lang/Class;Lorg/eclipse/e4/core/contexts/IEclipseContext;Lorg/eclipse/e4/core/contexts/IEclipseContext;Ljava/lang/Object;)Ljava/lang/Object; (35 bytes) @ 0x07929b98 [0x07929b20+0x78]
+j  org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(Lorg/eclipse/core/commands/ExecutionEvent;)Ljava/lang/Object;+94
+j  org.eclipse.core.commands.Command.executeWithChecks(Lorg/eclipse/core/commands/ExecutionEvent;)Ljava/lang/Object;+164
+j  org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+21
+j  org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(Lorg/eclipse/core/commands/ParameterizedCommand;Lorg/eclipse/e4/core/contexts/IEclipseContext;)Ljava/lang/Object;+38
+j  org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.executeItem(Lorg/eclipse/swt/widgets/Event;)V+53
+j  org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.handleWidgetSelection(Lorg/eclipse/swt/widgets/Event;)V+123
+j  org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.access$7(Lorg/eclipse/e4/ui/workbench/renderers/swt/HandledContributionItem;Lorg/eclipse/swt/widgets/Event;)V+2
+j  org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem$4.handleEvent(Lorg/eclipse/swt/widgets/Event;)V+71
+J 2014 C1 org.eclipse.swt.widgets.EventTable.sendEvent(Lorg/eclipse/swt/widgets/Event;)V (532 bytes) @ 0x07672928 [0x07672870+0xb8]
+j  org.eclipse.swt.widgets.Display.sendEvent(Lorg/eclipse/swt/widgets/EventTable;Lorg/eclipse/swt/widgets/Event;)V+12
+j  org.eclipse.swt.widgets.Widget.sendEvent(Lorg/eclipse/swt/widgets/Event;)V+26
+j  org.eclipse.swt.widgets.Display.runDeferredEvents()Z+92
+J 4046 C1 org.eclipse.swt.widgets.Display.readAndDispatch()Z (101 bytes) @ 0x0794f48c [0x0794f250+0x23c]
+j  org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run()V+626
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(Lorg/eclipse/e4/ui/model/application/MApplicationElement;Lorg/eclipse/e4/core/contexts/IEclipseContext;)Ljava/lang/Object;+57
+j  org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(Lorg/eclipse/e4/ui/model/application/MApplicationElement;)V+20
+j  org.eclipse.ui.internal.Workbench$5.run()V+310
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+2
+j  org.xmind.cathy.internal.CathyApplication.start(Lorg/eclipse/equinox/app/IApplicationContext;)Ljava/lang/Object;+318
+j  org.eclipse.equinox.internal.app.EclipseAppHandle.run(Ljava/lang/Object;)Ljava/lang/Object;+135
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Ljava/lang/Object;)Ljava/lang/Object;+85
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ljava/lang/Object;)Ljava/lang/Object;+82
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;+109
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;+132
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.eclipse.equinox.launcher.Main.invokeFramework([Ljava/lang/String;[Ljava/net/URL;)V+265
+j  org.eclipse.equinox.launcher.Main.basicRun([Ljava/lang/String;)V+160
+j  org.eclipse.equinox.launcher.Main.run([Ljava/lang/String;)I+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0d959400 JavaThread "ModalContext" [_thread_in_native, id=9972, stack(0x586c0000,0x587c0000)]
+  0x0df2b400 JavaThread "[ThreadPool Manager] - Idle Thread" daemon [_thread_blocked, id=12648, stack(0x57f50000,0x58050000)]
+  0x0df2ec00 JavaThread "XMind: Auto Save Temporary Workbooks" daemon [_thread_blocked, id=9420, stack(0x0fda0000,0x0fea0000)]
+  0x0df2e000 JavaThread "Thread-5" daemon [_thread_blocked, id=4656, stack(0x0fa30000,0x0fb30000)]
+  0x0df2dc00 JavaThread "EventAdmin Async Event Dispatcher Thread" daemon [_thread_blocked, id=9892, stack(0x0f6f0000,0x0f7f0000)]
+  0x0df2c000 JavaThread "EditorHistoryPersistenceThread" daemon [_thread_blocked, id=7684, stack(0x0f0c0000,0x0f1c0000)]
+  0x0df2d400 JavaThread "Worker-4" [_thread_blocked, id=552, stack(0x0ee80000,0x0ef80000)]
+  0x0df2e800 JavaThread "Worker-3" [_thread_blocked, id=11960, stack(0x0ed40000,0x0ee40000)]
+  0x0df2cc00 JavaThread "Worker-2" [_thread_blocked, id=6508, stack(0x0ec40000,0x0ed40000)]
+  0x0df2bc00 JavaThread "Worker-1" [_thread_blocked, id=13088, stack(0x0eb40000,0x0ec40000)]
+  0x0dd13000 JavaThread "Worker-0" [_thread_blocked, id=564, stack(0x0e640000,0x0e740000)]
+  0x0d0a5400 JavaThread "EMF Reference Cleaner" daemon [_thread_blocked, id=8856, stack(0x0ac50000,0x0ad50000)]
+  0x0d9d2800 JavaThread "Bundle File Closer" daemon [_thread_blocked, id=12808, stack(0x0ab10000,0x0ac10000)]
+  0x0d03ec00 JavaThread "Worker-JM" [_thread_blocked, id=11672, stack(0x0a8d0000,0x0a9d0000)]
+  0x0cfa3c00 JavaThread "[Timer] - Main Queue Handler" daemon [_thread_blocked, id=10300, stack(0x0d740000,0x0d840000)]
+  0x0cf34c00 JavaThread "Start Level: Equinox Container: 50604d66-8f79-0016-14b8-e6e601fbce16" daemon [_thread_blocked, id=11304, stack(0x0d4c0000,0x0d5c0000)]
+  0x09be4000 JavaThread "Framework Event Dispatcher: Equinox Container: 50604d66-8f79-0016-14b8-e6e601fbce16" daemon [_thread_blocked, id=5036, stack(0x0d3c0000,0x0d4c0000)]
+  0x0cecb800 JavaThread "Active Thread: Equinox Container: 50604d66-8f79-0016-14b8-e6e601fbce16" [_thread_blocked, id=11372, stack(0x0d1c0000,0x0d2c0000)]
+  0x09ab4800 JavaThread "Service Thread" daemon [_thread_blocked, id=12496, stack(0x0a340000,0x0a440000)]
+  0x09aadc00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=4772, stack(0x0a200000,0x0a300000)]
+  0x09aacc00 JavaThread "Attach Listener" daemon [_thread_blocked, id=1124, stack(0x0a0c0000,0x0a1c0000)]
+  0x09ae1800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=14644, stack(0x09f80000,0x0a080000)]
+  0x09a86800 JavaThread "Finalizer" daemon [_thread_blocked, id=14724, stack(0x09e40000,0x09f40000)]
+  0x09a81c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=14808, stack(0x09d00000,0x09e00000)]
+=>0x0656b800 JavaThread "main" [_thread_in_native, id=11244, stack(0x000a0000,0x001a0000)]
+
+Other Threads:
+  0x071ab800 VMThread [stack: 0x05ea0000,0x05fa0000] [id=10020]
+  0x09b5cc00 WatcherThread [stack: 0x0a480000,0x0a580000] [id=2908]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 188864K, used 62819K [0x10400000, 0x1d0e0000, 0x25950000)
+  eden space 167936K,  29% used [0x10400000, 0x13433c80, 0x1a800000)
+  from space 20928K,  64% used [0x1a800000, 0x1b525228, 0x1bc70000)
+  to   space 20928K,   0% used [0x1bc70000, 0x1bc70000, 0x1d0e0000)
+ tenured generation   total 419500K, used 384663K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  91% used [0x25950000, 0x3d0f5cb8, 0x3d0f5e00, 0x3f2fb000)
+ Metaspace       used 29561K, capacity 31209K, committed 31360K, reserved 32128K
+
+Card table byte_map: [0x092b0000,0x094c0000] byte_map_base: 0x0922e000
+
+Polling page: 0x06540000
+
+CodeCache: size=32768Kb used=8508Kb max_used=8749Kb free=24259Kb
+ bounds [0x072b0000, 0x07b40000, 0x092b0000]
+ total_blobs=5192 nmethods=4925 adapters=194
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 109.247 Thread 0x09aadc00 5205             org.xmind.ui.branch.AbstractBranchStructure::doFillSummary (275 bytes)
+Event: 109.249 Thread 0x09aadc00 nmethod 5205 0x07b3bc48 code [0x07b3be10, 0x07b3c3b0]
+Event: 109.253 Thread 0x09aadc00 5206             org.xmind.ui.branch.AbstractBranchStructure::getPreferredSummaryWidth (45 bytes)
+Event: 109.254 Thread 0x09aadc00 nmethod 5206 0x0737bc88 code [0x0737bdd0, 0x0737c074]
+Event: 109.255 Thread 0x09aadc00 5207             org.xmind.ui.branch.AbstractBranchStructure::getConclusionBranch (58 bytes)
+Event: 109.255 Thread 0x09aadc00 nmethod 5207 0x073552c8 code [0x07355410, 0x07355698]
+Event: 109.256 Thread 0x09aadc00 5208             org.xmind.ui.branch.AbstractBranchStructure::getConclusionReferenceDescription (82 bytes)
+Event: 109.256 Thread 0x09aadc00 nmethod 5208 0x073850c8 code [0x07385210, 0x073854d4]
+Event: 109.341 Thread 0x09aadc00 5209             java.util.HashMap::values (27 bytes)
+Event: 109.342 Thread 0x09aadc00 nmethod 5209 0x07384e88 code [0x07384f80, 0x07385070]
+
+GC Heap History (10 events):
+Event: 76.903 GC heap before
+{Heap before GC invocations=55 (full 4):
+ def new generation   total 59328K, used 59328K [0x10400000, 0x14450000, 0x25950000)
+  eden space 52800K, 100% used [0x10400000, 0x13790000, 0x13790000)
+  from space 6528K, 100% used [0x13790000, 0x13df0000, 0x13df0000)
+  to   space 6528K,   0% used [0x13df0000, 0x13df0000, 0x14450000)
+ tenured generation   total 419500K, used 399005K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  95% used [0x25950000, 0x3def77c0, 0x3def7800, 0x3f2fb000)
+ Metaspace       used 29509K, capacity 31175K, committed 31360K, reserved 32128K
+Event: 76.926 GC heap after
+Heap after GC invocations=56 (full 4):
+ def new generation   total 59328K, used 1480K [0x10400000, 0x14450000, 0x25950000)
+  eden space 52800K,   0% used [0x10400000, 0x10400000, 0x13790000)
+  from space 6528K,  22% used [0x13df0000, 0x13f62340, 0x14450000)
+  to   space 6528K,   0% used [0x13790000, 0x13790000, 0x13df0000)
+ tenured generation   total 419500K, used 405081K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  96% used [0x25950000, 0x3e4e6788, 0x3e4e6800, 0x3f2fb000)
+ Metaspace       used 29509K, capacity 31175K, committed 31360K, reserved 32128K
+}
+Event: 79.472 GC heap before
+{Heap before GC invocations=56 (full 4):
+ def new generation   total 59328K, used 42423K [0x10400000, 0x14450000, 0x25950000)
+  eden space 52800K,  77% used [0x10400000, 0x12bfb8e0, 0x13790000)
+  from space 6528K,  22% used [0x13df0000, 0x13f62340, 0x14450000)
+  to   space 6528K,   0% used [0x13790000, 0x13790000, 0x13df0000)
+ tenured generation   total 419500K, used 405081K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  96% used [0x25950000, 0x3e4e6788, 0x3e4e6800, 0x3f2fb000)
+ Metaspace       used 29509K, capacity 31175K, committed 31360K, reserved 32128K
+Event: 79.481 GC heap after
+Heap after GC invocations=57 (full 4):
+ def new generation   total 59328K, used 1729K [0x10400000, 0x14450000, 0x25950000)
+  eden space 52800K,   0% used [0x10400000, 0x10400000, 0x13790000)
+  from space 6528K,  26% used [0x13790000, 0x13940460, 0x13df0000)
+  to   space 6528K,   0% used [0x13df0000, 0x13df0000, 0x14450000)
+ tenured generation   total 419500K, used 405081K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  96% used [0x25950000, 0x3e4e6788, 0x3e4e6800, 0x3f2fb000)
+ Metaspace       used 29509K, capacity 31175K, committed 31360K, reserved 32128K
+}
+Event: 80.093 GC heap before
+{Heap before GC invocations=57 (full 4):
+ def new generation   total 59328K, used 24110K [0x10400000, 0x14450000, 0x25950000)
+  eden space 52800K,  42% used [0x10400000, 0x119db438, 0x13790000)
+  from space 6528K,  26% used [0x13790000, 0x13940460, 0x13df0000)
+  to   space 6528K,   0% used [0x13df0000, 0x13df0000, 0x14450000)
+ tenured generation   total 419500K, used 405081K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  96% used [0x25950000, 0x3e4e6788, 0x3e4e6800, 0x3f2fb000)
+ Metaspace       used 29509K, capacity 31175K, committed 31360K, reserved 32128K
+Event: 80.332 GC heap after
+Heap after GC invocations=58 (full 5):
+ def new generation   total 188864K, used 0K [0x10400000, 0x1d0e0000, 0x25950000)
+  eden space 167936K,   0% used [0x10400000, 0x10400000, 0x1a800000)
+  from space 20928K,   0% used [0x1a800000, 0x1a800000, 0x1bc70000)
+  to   space 20928K,   0% used [0x1bc70000, 0x1bc70000, 0x1d0e0000)
+ tenured generation   total 419500K, used 96792K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  23% used [0x25950000, 0x2b7d6228, 0x2b7d6400, 0x3f2fb000)
+ Metaspace       used 29509K, capacity 31175K, committed 31360K, reserved 32128K
+}
+Event: 107.488 GC heap before
+{Heap before GC invocations=58 (full 5):
+ def new generation   total 188864K, used 167936K [0x10400000, 0x1d0e0000, 0x25950000)
+  eden space 167936K, 100% used [0x10400000, 0x1a800000, 0x1a800000)
+  from space 20928K,   0% used [0x1a800000, 0x1a800000, 0x1bc70000)
+  to   space 20928K,   0% used [0x1bc70000, 0x1bc70000, 0x1d0e0000)
+ tenured generation   total 419500K, used 384663K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  91% used [0x25950000, 0x3d0f5cb8, 0x3d0f5e00, 0x3f2fb000)
+ Metaspace       used 29561K, capacity 31209K, committed 31360K, reserved 32128K
+Event: 107.502 GC heap after
+Heap after GC invocations=59 (full 5):
+ def new generation   total 188864K, used 3853K [0x10400000, 0x1d0e0000, 0x25950000)
+  eden space 167936K,   0% used [0x10400000, 0x10400000, 0x1a800000)
+  from space 20928K,  18% used [0x1bc70000, 0x1c033548, 0x1d0e0000)
+  to   space 20928K,   0% used [0x1a800000, 0x1a800000, 0x1bc70000)
+ tenured generation   total 419500K, used 384663K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  91% used [0x25950000, 0x3d0f5cb8, 0x3d0f5e00, 0x3f2fb000)
+ Metaspace       used 29561K, capacity 31209K, committed 31360K, reserved 32128K
+}
+Event: 109.125 GC heap before
+{Heap before GC invocations=59 (full 5):
+ def new generation   total 188864K, used 171789K [0x10400000, 0x1d0e0000, 0x25950000)
+  eden space 167936K, 100% used [0x10400000, 0x1a800000, 0x1a800000)
+  from space 20928K,  18% used [0x1bc70000, 0x1c033548, 0x1d0e0000)
+  to   space 20928K,   0% used [0x1a800000, 0x1a800000, 0x1bc70000)
+ tenured generation   total 419500K, used 384663K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  91% used [0x25950000, 0x3d0f5cb8, 0x3d0f5e00, 0x3f2fb000)
+ Metaspace       used 29561K, capacity 31209K, committed 31360K, reserved 32128K
+Event: 109.175 GC heap after
+Heap after GC invocations=60 (full 5):
+ def new generation   total 188864K, used 13460K [0x10400000, 0x1d0e0000, 0x25950000)
+  eden space 167936K,   0% used [0x10400000, 0x10400000, 0x1a800000)
+  from space 20928K,  64% used [0x1a800000, 0x1b525228, 0x1bc70000)
+  to   space 20928K,   0% used [0x1bc70000, 0x1bc70000, 0x1d0e0000)
+ tenured generation   total 419500K, used 384663K [0x25950000, 0x3f2fb000, 0x50400000)
+   the space 419500K,  91% used [0x25950000, 0x3d0f5cb8, 0x3d0f5e00, 0x3f2fb000)
+ Metaspace       used 29561K, capacity 31209K, committed 31360K, reserved 32128K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 3.082 Thread 0x0656b800 Exception <a 'java/io/FileNotFoundException'> (0x1157b0b0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\4988\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 3.209 Thread 0x0656b800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x11c4ce10) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\4988\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 3.380 Thread 0x0656b800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x12219998) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\4988\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 3.380 Thread 0x0656b800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x1221b260) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\4988\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 3.444 Thread 0x0656b800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x12415580) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\4988\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 4.153 Thread 0x0656b800 Exception <a 'java/io/FileNotFoundException'> (0x118b6f20) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\4988\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 4.959 Thread 0x0dd13000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x110f3cc8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\4988\hotspot\src\share\vm\prims\methodHandles.cpp, line 1146]
+Event: 4.960 Thread 0x0dd13000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x111002c8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u66\4988\hotspot\src\share\vm\prims\methodHandles.cpp, line 1146]
+Event: 9.749 Thread 0x0656b800 Implicit null exception at 0x078d143b to 0x078d1b7c
+Event: 9.752 Thread 0x0656b800 Implicit null exception at 0x078d143b to 0x078d1b7c
+
+Events (10 events):
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a3188
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a3bc8
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a4048
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a4288
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a4588
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a4748
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a4ec8
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a5088
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a5e48
+Event: 109.250 Thread 0x09aadc00 flushing nmethod 0x073a7d08
+
+
+Dynamic libraries:
+0x00400000 - 0x0044e000 	C:\Program Files (x86)\XMind\XMind.exe
+0x77330000 - 0x774ab000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x77240000 - 0x77320000 	C:\WINDOWS\SYSTEM32\KERNEL32.DLL
+0x76ea0000 - 0x7701e000 	C:\WINDOWS\SYSTEM32\KERNELBASE.dll
+0x75c70000 - 0x75db7000 	C:\WINDOWS\SYSTEM32\USER32.dll
+0x752d0000 - 0x7541f000 	C:\WINDOWS\SYSTEM32\GDI32.dll
+0x75bb0000 - 0x75c6e000 	C:\WINDOWS\SYSTEM32\MSVCRT.dll
+0x71b30000 - 0x71d3f000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10586.494_none_ea85e725b9ba5a4b\COMCTL32.dll
+0x76660000 - 0x7681d000 	C:\WINDOWS\SYSTEM32\combase.dll
+0x75e50000 - 0x75efd000 	C:\WINDOWS\SYSTEM32\RPCRT4.dll
+0x73e50000 - 0x73e6e000 	C:\WINDOWS\SYSTEM32\SspiCli.dll
+0x73e40000 - 0x73e4a000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x75df0000 - 0x75e48000 	C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll
+0x76490000 - 0x764d4000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x765d0000 - 0x765fb000 	C:\WINDOWS\SYSTEM32\IMM32.DLL
+0x72000000 - 0x7200d000 	C:\Program Files (x86)\XMind\plugins\org.eclipse.equinox.launcher.win32.win32.x86_1.1.300.v20150602-1417\eclipse_1611.dll
+0x75f70000 - 0x75feb000 	C:\WINDOWS\SYSTEM32\ADVAPI32.dll
+0x73e10000 - 0x73e18000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x72150000 - 0x721c5000 	C:\WINDOWS\system32\uxtheme.dll
+0x76820000 - 0x7693f000 	C:\WINDOWS\SYSTEM32\MSCTF.dll
+0x10000000 - 0x10330000 	C:\WINDOWS\system32\SOGOUPY.IME
+0x73200000 - 0x73206000 	C:\WINDOWS\system32\MSIMG32.dll
+0x70540000 - 0x70594000 	C:\WINDOWS\system32\OLEACC.dll
+0x73ed0000 - 0x752ce000 	C:\WINDOWS\SYSTEM32\SHELL32.dll
+0x77200000 - 0x77237000 	C:\WINDOWS\SYSTEM32\cfgmgr32.dll
+0x75590000 - 0x75a8a000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x76090000 - 0x760d5000 	C:\WINDOWS\SYSTEM32\shlwapi.dll
+0x75f50000 - 0x75f5c000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x76170000 - 0x761fd000 	C:\WINDOWS\SYSTEM32\shcore.dll
+0x76610000 - 0x76654000 	C:\WINDOWS\SYSTEM32\powrprof.dll
+0x76600000 - 0x7660f000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x728b0000 - 0x728d8000 	C:\WINDOWS\SYSTEM32\ntmarta.dll
+0x02950000 - 0x029e4000 	C:\Program Files (x86)\SogouInput\7.0.0.9604\Resource.dll
+0x6e3e0000 - 0x6e46c000 	C:\Program Files (x86)\SogouInput\Components\PicFace\1.0.0.792\PicFace.dll
+0x57b80000 - 0x57f45000 	C:\Program Files (x86)\XMind\jre\bin\client\jvm.dll
+0x76940000 - 0x76964000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x75f00000 - 0x75f23000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x6ddb0000 - 0x6ddb8000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x763e0000 - 0x763e6000 	C:\WINDOWS\SYSTEM32\PSAPI.DLL
+0x77020000 - 0x7707f000 	C:\WINDOWS\SYSTEM32\WS2_32.dll
+0x61b50000 - 0x61c0f000 	C:\WINDOWS\SYSTEM32\MSVCR100.dll
+0x72890000 - 0x7289c000 	C:\Program Files (x86)\XMind\jre\bin\verify.dll
+0x5d110000 - 0x5d131000 	C:\Program Files (x86)\XMind\jre\bin\java.dll
+0x6e2e0000 - 0x6e3d4000 	C:\Program Files (x86)\SogouInput\Components\SmartInfo\1.0.0.325\SmartInfo.dll
+0x764e0000 - 0x765cb000 	C:\WINDOWS\SYSTEM32\ole32.dll
+0x763f0000 - 0x76482000 	C:\WINDOWS\SYSTEM32\OLEAUT32.dll
+0x5d0f0000 - 0x5d103000 	C:\Program Files (x86)\XMind\jre\bin\zip.dll
+0x6e280000 - 0x6e2de000 	C:\Program Files (x86)\SogouInput\Components\WonderfulWrite\1.0.0.53\WonderfulWrite.dll
+0x72e20000 - 0x72e33000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x72120000 - 0x7214f000 	C:\WINDOWS\system32\rsaenh.dll
+0x72e00000 - 0x72e1b000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x73e20000 - 0x73e39000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x5c310000 - 0x5c326000 	C:\Program Files (x86)\XMind\jre\bin\net.dll
+0x730f0000 - 0x7313f000 	C:\WINDOWS\system32\mswsock.dll
+0x73b80000 - 0x73baf000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x75de0000 - 0x75de7000 	C:\WINDOWS\SYSTEM32\NSI.dll
+0x732a0000 - 0x732b3000 	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL
+0x73960000 - 0x73974000 	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+0x5bbb0000 - 0x5bbbf000 	C:\Program Files (x86)\XMind\jre\bin\nio.dll
+0x760e0000 - 0x76164000 	C:\WINDOWS\SYSTEM32\clbcatq.dll
+0x53550000 - 0x5355e000 	C:\Users\liuyuge\AppData\Local\Youdao\Dict\Application\6.3.69.8341\WordStrokeHelper32.dll
+0x707a0000 - 0x707bd000 	C:\WINDOWS\SYSTEM32\dwmapi.dll
+0x731e0000 - 0x731f2000 	C:\WINDOWS\system32\napinsp.dll
+0x72550000 - 0x72566000 	C:\WINDOWS\system32\pnrpnsp.dll
+0x720a0000 - 0x720b4000 	C:\WINDOWS\system32\NLAapi.dll
+0x733c0000 - 0x73444000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x731a0000 - 0x731ab000 	C:\WINDOWS\System32\winrnr.dll
+0x71850000 - 0x71861000 	C:\WINDOWS\System32\wshbth.dll
+0x72840000 - 0x72848000 	C:\Windows\System32\rasadhlp.dll
+0x71f30000 - 0x71f77000 	C:\WINDOWS\System32\fwpuclnt.dll
+0x5af60000 - 0x5af6f000 	C:\Users\liuyuge\Application Data\XMind\configuration-cathy_win32\org.eclipse.osgi\209\0\.cp\jWinHttp-1.0.0.dll
+0x72480000 - 0x7251b000 	C:\WINDOWS\SYSTEM32\WINHTTP.dll
+0x0ad50000 - 0x0adc0000 	C:\Users\liuyuge\Application Data\XMind\configuration-cathy_win32\org.eclipse.osgi\855\0\.cp\swt-win32-4528.dll
+0x76990000 - 0x76a82000 	C:\WINDOWS\SYSTEM32\comdlg32.dll
+0x75b50000 - 0x75bae000 	C:\WINDOWS\SYSTEM32\FirewallAPI.dll
+0x76970000 - 0x76983000 	C:\WINDOWS\SYSTEM32\NETAPI32.dll
+0x75f30000 - 0x75f46000 	C:\WINDOWS\SYSTEM32\USP10.dll
+0x77080000 - 0x771f9000 	C:\WINDOWS\SYSTEM32\CRYPT32.dll
+0x77320000 - 0x7732e000 	C:\WINDOWS\SYSTEM32\MSASN1.dll
+0x70b00000 - 0x70b67000 	C:\WINDOWS\SYSTEM32\WINSPOOL.DRV
+0x72a20000 - 0x72c8a000 	C:\WINDOWS\SYSTEM32\WININET.dll
+0x6f5f0000 - 0x6f5fb000 	C:\WINDOWS\SYSTEM32\DAVHLPR.DLL
+0x6e520000 - 0x6e54d000 	C:\WINDOWS\SYSTEM32\fwbase.dll
+0x72fa0000 - 0x730eb000 	C:\WINDOWS\SYSTEM32\propsys.dll
+0x0af10000 - 0x0af2d000 	C:\Users\liuyuge\Application Data\XMind\configuration-cathy_win32\org.eclipse.osgi\855\0\.cp\swt-gdip-win32-4528.dll
+0x73590000 - 0x736fb000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.10586.545_none_1b71dcef144be902\gdiplus.dll
+0x701a0000 - 0x70313000 	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll
+0x0fc30000 - 0x0fc3c000 	C:\Users\liuyuge\Application Data\XMind\configuration-cathy_win32\org.eclipse.osgi\182\0\.cp\os\win32\x86\localfile_1_0_0.dll
+0x5aed0000 - 0x5aef0000 	C:\Program Files (x86)\XMind\jre\bin\sunec.dll
+0x6b190000 - 0x6b381000 	C:\WINDOWS\SYSTEM32\DWrite.dll
+0x6d100000 - 0x6d141000 	C:\WINDOWS\system32\dataexchange.dll
+0x6cee0000 - 0x6d0fa000 	C:\WINDOWS\system32\d3d11.dll
+0x6ce30000 - 0x6ced7000 	C:\WINDOWS\system32\dcomp.dll
+0x6cda0000 - 0x6ce22000 	C:\WINDOWS\system32\dxgi.dll
+0x6f670000 - 0x6f73e000 	C:\WINDOWS\system32\twinapi.appcore.dll
+0x5b770000 - 0x5bbaa000 	C:\WINDOWS\system32\explorerframe.dll
+0x73140000 - 0x73189000 	C:\WINDOWS\system32\edputil.dll
+0x5b1d0000 - 0x5b337000 	C:\WINDOWS\system32\DUI70.dll
+0x5b150000 - 0x5b1cb000 	C:\WINDOWS\system32\DUser.dll
+0x5b110000 - 0x5b14e000 	C:\Windows\SYSTEM32\thumbcache.dll
+0x6ec00000 - 0x6ed32000 	C:\Windows\System32\Windows.Globalization.dll
+0x6eb20000 - 0x6eb72000 	C:\Windows\System32\Bcp47Langs.dll
+0x71730000 - 0x71753000 	C:\WINDOWS\SYSTEM32\globinputhost.dll
+0x5b400000 - 0x5b47d000 	C:\Program Files (x86)\Common Files\microsoft shared\ink\tiptsf.dll
+0x5b080000 - 0x5b103000 	C:\WINDOWS\System32\StructuredQuery.dll
+0x6f070000 - 0x6f28c000 	C:\Windows\SYSTEM32\ActXPrxy.dll
+0x61c20000 - 0x61c2d000 	C:\WINDOWS\SYSTEM32\atlthunk.dll
+0x68bb0000 - 0x68c52000 	C:\WINDOWS\system32\Windows.Storage.Search.dll
+0x5b3b0000 - 0x5b3fa000 	C:\WINDOWS\SYSTEM32\policymanager.dll
+0x5b340000 - 0x5b3a5000 	C:\WINDOWS\SYSTEM32\msvcp110_win.dll
+0x75af0000 - 0x75b4a000 	C:\WINDOWS\SYSTEM32\coml2.dll
+0x71710000 - 0x71726000 	C:\WINDOWS\SYSTEM32\MPR.dll
+0x6eaf0000 - 0x6eafb000 	C:\WINDOWS\SYSTEM32\LINKINFO.dll
+0x5b070000 - 0x5b079000 	C:\WINDOWS\System32\drprov.dll
+0x73ae0000 - 0x73b24000 	C:\WINDOWS\System32\WINSTA.dll
+0x5b050000 - 0x5b062000 	C:\WINDOWS\System32\ntlanman.dll
+0x5b030000 - 0x5b04a000 	C:\WINDOWS\System32\davclnt.dll
+0x72090000 - 0x720a0000 	C:\WINDOWS\System32\wkscli.dll
+0x5d0b0000 - 0x5d0bf000 	C:\WINDOWS\SYSTEM32\cscapi.dll
+0x737f0000 - 0x737fa000 	C:\WINDOWS\System32\netutils.dll
+0x5af90000 - 0x5b023000 	C:\Windows\SYSTEM32\twinapi.dll
+0x721d0000 - 0x72262000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x5a220000 - 0x5a290000 	C:\Windows\SYSTEM32\dlnashext.dll
+0x5a290000 - 0x5a2e7000 	C:\Windows\System32\PlayToDevice.dll
+0x5a430000 - 0x5a44b000 	C:\Windows\System32\DevDispItemProvider.dll
+0x5c0e0000 - 0x5c1a9000 	C:\WINDOWS\SYSTEM32\ntshrui.dll
+0x72f30000 - 0x72f4c000 	C:\WINDOWS\SYSTEM32\srvcli.dll
+0x61c10000 - 0x61c18000 	C:\WINDOWS\system32\IconCodecService.dll
+
+VM Arguments:
+jvm_args: -Xms128m -Xmx1024m -XX:MaxPermSize=256m 
+java_command: <unknown>
+java_class_path (initial): C:\Program Files (x86)\XMind\\plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_74
+PATH=C:/Program Files (x86)/XMind/jre/bin/client;C:/Program Files (x86)/XMind/jre/bin;C:/Program Files (x86)/XMind/jre/lib/i386;C:\Android\sdk\platform-tools;C:\Program Files\Java\jdk1.8.0_74\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Rational\common;C:\Users\liuyuge\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\liuyuge\AppData\Local\Programs\Python\Python35-32\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\liuyuge\AppData\Local\Programs\Python\Python35;C:\Users\liuyuge\Documents\GitHub\AndroidNotes;
+USERNAME=liuyuge
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 10586 (10.0.10586.0)
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8223456k(2476628k free), swap 10408684k(1506156k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.66-b17) for windows-x86 JRE (1.8.0_66-b17), built on Oct  6 2015 19:59:47 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Sep 13 16:54:18 2016
+elapsed time: 111 seconds (0d 0h 1m 51s)
+
